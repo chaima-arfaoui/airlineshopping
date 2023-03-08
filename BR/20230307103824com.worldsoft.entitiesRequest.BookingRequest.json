@@ -1,0 +1,48 @@
+{
+    "fareSourceCode": "VDRkaElHSmVRTmdQbklQSEluR3VONVVDTmFQYUFPazdDbk0zV2VyeW4vZGxteVZMRStyUk54bys5QVUrWDRjWms5S3VsaUgvd0grU1JvenB4blBQLytGaFpYQkNSbzNNY2RmZVdTOHAzNldBMUl1ejdhblBjSmE5bFFMUVRsekhLYW9SeE9JcVlHTlN4K1Z4S1gwZ1p3PT0\u003d",
+    "travelerInfo": {
+        "airTravelers": [
+            {
+                "passengerType": "ADT",
+                "gender": "M",
+                "passengerName": {
+                    "passengerTitle": "MR",
+                    "passengerFirstName": "MOHAMMED",
+                    "passengerLastName": "MUBARAK"
+                },
+                "dateOfBirth": "Jan 3, 1988, 1:00:00 AM",
+                "passport": {
+                    "passportNumber": "Z876789",
+                    "expiryDate": "Jan 3, 2025, 1:00:00 AM",
+                    "country": "IN"
+                },
+                "specialServiceRequest": {
+                    "seatPreference": "Any",
+                    "mealPreference": "Any",
+                    "requestedSegments": [
+                        {
+                            "origin": "BLR",
+                            "destination": "DXB",
+                            "flightNumber": "567",
+                            "departureDateTime": "Mar 7, 2023, 9:20:00 PM",
+                            "requestSSRs": [
+                                {
+                                    "sSRCode": "Any",
+                                    "freeText": "Meal MOML"
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "passengerNationality": "IN",
+                "nationalID": "IN"
+            }
+        ],
+        "countryCode": "91",
+        "areaCode": "080",
+        "phoneNumber": "87657897",
+        "email": "apisupport@mystifly.com",
+        "postCode": "560028"
+    },
+    "target": "Test"
+}

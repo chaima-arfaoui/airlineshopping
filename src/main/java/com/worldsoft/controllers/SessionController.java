@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 import com.worldsoft.Services.SessionService;
-import com.worldsoft.entities.response.SessionResponse;
 import com.worldsoft.entitiesRequest.SessionRequest;
+import com.worldsoft.entitiesResponse.SessionResponse;
 
 
 @CrossOrigin("*")

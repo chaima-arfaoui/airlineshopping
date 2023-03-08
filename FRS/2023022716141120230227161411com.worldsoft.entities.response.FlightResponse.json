@@ -1,0 +1,12 @@
+{
+    "data": {
+        "conversationId": "string",
+        "errors": [
+            {
+                "Code": "ERSER021",
+                "Message": "Flights not found for the given search condition "
+            }
+        ],
+        "pricedItineraries": []
+    }
+}

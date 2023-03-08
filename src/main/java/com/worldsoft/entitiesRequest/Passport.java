@@ -8,7 +8,7 @@ public class Passport {
 	 @JsonProperty("PassportNumber") 
 	 private String passportNumber;
 	    @JsonProperty("ExpiryDate") 
-	    private Date expiryDate;
+	    private String expiryDate;
 	    @JsonProperty("Country") 
 	    private String country;
 		public String getPassportNumber() {
@@ -17,10 +17,10 @@ public class Passport {
 		public void setPassportNumber(String passportNumber) {
 			this.passportNumber = passportNumber;
 		}
-		public Date getExpiryDate() {
+		public String getExpiryDate() {
 			return expiryDate;
 		}
-		public void setExpiryDate(Date expiryDate) {
+		public void setExpiryDate(String expiryDate) {
 			this.expiryDate = expiryDate;
 		}
 		public String getCountry() {
@@ -29,7 +29,7 @@ public class Passport {
 		public void setCountry(String country) {
 			this.country = country;
 		}
-		public Passport(String passportNumber, Date expiryDate, String country) {
+		public Passport(String passportNumber, String expiryDate, String country) {
 			super();
 			this.passportNumber = passportNumber;
 			this.expiryDate = expiryDate;

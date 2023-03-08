@@ -10,7 +10,7 @@ public class AirTraveler {
 	    @JsonProperty("PassengerName") 
 	    private PassengerName passengerName;
 	    @JsonProperty("DateOfBirth") 
-	    private Date dateOfBirth;
+	    private String dateOfBirth;
 	    @JsonProperty("Passport") 
 	    private Passport passport;
 	    @JsonProperty("SpecialServiceRequest") 
@@ -37,10 +37,10 @@ public class AirTraveler {
 		public void setPassengerName(PassengerName passengerName) {
 			this.passengerName = passengerName;
 		}
-		public Date getDateOfBirth() {
+		public String getDateOfBirth() {
 			return dateOfBirth;
 		}
-		public void setDateOfBirth(Date dateOfBirth) {
+		public void setDateOfBirth(String dateOfBirth) {
 			this.dateOfBirth = dateOfBirth;
 		}
 		public Passport getPassport() {
@@ -67,7 +67,7 @@ public class AirTraveler {
 		public void setNationalID(String nationalID) {
 			this.nationalID = nationalID;
 		}
-		public AirTraveler(String passengerType, String gender, PassengerName passengerName, Date dateOfBirth,
+		public AirTraveler(String passengerType, String gender, PassengerName passengerName, String dateOfBirth,
 				Passport passport, SpecialServiceRequest specialServiceRequest, String passengerNationality,
 				String nationalID) {
 			super();

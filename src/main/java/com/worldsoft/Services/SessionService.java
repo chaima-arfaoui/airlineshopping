@@ -16,8 +16,8 @@ import org.springframework.web.client.RestTemplate;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
-import com.worldsoft.entities.response.SessionResponse;
 import com.worldsoft.entitiesRequest.SessionRequest;
+import com.worldsoft.entitiesResponse.SessionResponse;
 
 @Service
 public class SessionService {

@@ -13,7 +13,7 @@ public class RequestedSegment {
 	    @JsonProperty("FlightNumber") 
 	    private String flightNumber;
 	    @JsonProperty("DepartureDateTime") 
-	    private Date departureDateTime;
+	    private String departureDateTime;
 	    @JsonProperty("RequestSSRs") 
 	    private ArrayList<RequestSSR> requestSSRs;
 		public String getOrigin() {
@@ -34,10 +34,10 @@ public class RequestedSegment {
 		public void setFlightNumber(String flightNumber) {
 			this.flightNumber = flightNumber;
 		}
-		public Date getDepartureDateTime() {
+		public String getDepartureDateTime() {
 			return departureDateTime;
 		}
-		public void setDepartureDateTime(Date departureDateTime) {
+		public void setDepartureDateTime(String departureDateTime) {
 			this.departureDateTime = departureDateTime;
 		}
 		public ArrayList<RequestSSR> getRequestSSRs() {
@@ -46,7 +46,7 @@ public class RequestedSegment {
 		public void setRequestSSRs(ArrayList<RequestSSR> requestSSRs) {
 			this.requestSSRs = requestSSRs;
 		}
-		public RequestedSegment(String origin, String destination, String flightNumber, Date departureDateTime,
+		public RequestedSegment(String origin, String destination, String flightNumber, String departureDateTime,
 				ArrayList<RequestSSR> requestSSRs) {
 			super();
 			this.origin = origin;

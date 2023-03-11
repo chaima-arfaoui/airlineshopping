@@ -34,7 +34,7 @@ public class OrderticketService {
 
 		RestTemplate restTemplate = new RestTemplate();
 		HttpEntity<OrderticketRequest> entity = new HttpEntity<>(orderticketRequest, headers);
-		URI url = new URI("https://restapidemo.myfarebox.com/api/v1/Revalidate/Flight");
+		URI url = new URI("https://restapidemo.myfarebox.com/api/v1/OrderTicket");
 		ResponseEntity<OrderticketResponse> orderticketResponse = restTemplate.exchange(url, HttpMethod.POST, entity,
 				OrderticketResponse.class);
 		return orderticketResponse.getBody() ;

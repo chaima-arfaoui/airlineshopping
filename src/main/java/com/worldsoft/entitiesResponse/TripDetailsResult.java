@@ -4,7 +4,7 @@ import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class TripDetailsResulttrip {
+public class TripDetailsResult {
 	@JsonProperty("Provider") 
     private String provider;
     @JsonProperty("Success") 
@@ -37,7 +37,7 @@ public class TripDetailsResulttrip {
 	public void setBookingCreatedOn(Date bookingCreatedOn) {
 		this.bookingCreatedOn = bookingCreatedOn;
 	}
-	public TripDetailsResulttrip(String provider, boolean success, TravelItinerary travelItinerary,
+	public TripDetailsResult(String provider, boolean success, TravelItinerary travelItinerary,
 			Date bookingCreatedOn) {
 		super();
 		this.provider = provider;
@@ -45,7 +45,7 @@ public class TripDetailsResulttrip {
 		this.travelItinerary = travelItinerary;
 		this.bookingCreatedOn = bookingCreatedOn;
 	}
-	public TripDetailsResulttrip() {
+	public TripDetailsResult() {
 		super();
 	}
     

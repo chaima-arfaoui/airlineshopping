@@ -18,7 +18,7 @@ import com.worldsoft.entitiesResponse.TripDetailsResponse;
 public class TripdetailService {
 	@Autowired
 	private SessionService sessionService;
-	public TripDetailsResponse addtripdetail (TripdetailRequest tripdetailRequest) {
+	public TripDetailsResponse gettripdetail (String mfref) {
 		try {
 			String userName = "WSGXML";
 			String accountNumber = "MCN000018";
@@ -33,9 +33,9 @@ public class TripdetailService {
 			headers.set("Authorization", "Bearer " + sessionId);
 
 		RestTemplate restTemplate = new RestTemplate();
-		HttpEntity<TripdetailRequest> entity = new HttpEntity<>(tripdetailRequest, headers);
-		URI url = new URI("https://restapidemo.myfarebox.com/api/TripDetails/{MFRef}");
-		ResponseEntity<TripDetailsResponse> tripDetailsResponse = restTemplate.exchange(url, HttpMethod.POST, entity,
+		HttpEntity<String> entity = new HttpEntity<String>( headers);
+		URI url = new URI("https://restapidemo.myfarebox.com/api/TripDetails/"+ mfref);
+		ResponseEntity<TripDetailsResponse> tripDetailsResponse = restTemplate.exchange(url, HttpMethod.GET, entity,
 				TripDetailsResponse.class);
 		return tripDetailsResponse.getBody() ;
 

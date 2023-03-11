@@ -6,17 +6,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class ExtraServices {
 	 @JsonProperty("Services") 
-	    private ArrayList<Object> services;
+	    private ArrayList<Service> services;
 
-	public ArrayList<Object> getServices() {
+	public ArrayList<Service> getServices() {
 		return services;
 	}
 
-	public void setServices(ArrayList<Object> services) {
+	public void setServices(ArrayList<Service> services) {
 		this.services = services;
 	}
 
-	public ExtraServices(ArrayList<Object> services) {
+	public ExtraServices(ArrayList<Service> services) {
 		super();
 		this.services = services;
 	}

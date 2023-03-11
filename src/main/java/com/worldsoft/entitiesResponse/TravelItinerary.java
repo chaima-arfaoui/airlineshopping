@@ -32,8 +32,8 @@ public class TravelItinerary {
     private double clientUTCOffset;
     @JsonProperty("Itineraries") 
     private ArrayList<Itinerary> itineraries;
-    @JsonProperty("TransactionDetails") 
-    private TransactionDetails transactionDetails;
+    /*@JsonProperty("TransactionDetails") 
+    private TransactionDetails transactionDetails;*/
     @JsonProperty("BookingNotes") 
     private ArrayList<Object> bookingNotes;
     @JsonProperty("TicketingTimeLimit") 
@@ -122,12 +122,12 @@ public class TravelItinerary {
 	public void setItineraries(ArrayList<Itinerary> itineraries) {
 		this.itineraries = itineraries;
 	}
-	public TransactionDetails getTransactionDetails() {
+	/*public TransactionDetails getTransactionDetails() {
 		return transactionDetails;
 	}
 	public void setTransactionDetails(TransactionDetails transactionDetails) {
 		this.transactionDetails = transactionDetails;
-	}
+	}*/
 	public ArrayList<Object> getBookingNotes() {
 		return bookingNotes;
 	}
@@ -179,7 +179,7 @@ public class TravelItinerary {
 		this.voidingWindow = voidingWindow;
 		this.clientUTCOffset = clientUTCOffset;
 		this.itineraries = itineraries;
-		this.transactionDetails = transactionDetails;
+		//this.transactionDetails = transactionDetails;
 		this.bookingNotes = bookingNotes;
 		this.ticketingTimeLimit = ticketingTimeLimit;
 		this.bookingMode = bookingMode;

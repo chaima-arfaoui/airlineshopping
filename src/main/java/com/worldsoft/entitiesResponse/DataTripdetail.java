@@ -3,18 +3,18 @@ package com.worldsoft.entitiesResponse;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class DataTripdetail {
-	 @JsonProperty("TripDetailsResult") 
-	    public TripDetailsResponse tripDetailsResult;
+	@JsonProperty("TripDetailsResult")
+	public TripDetailsResult tripDetailsResult;
 
-	public TripDetailsResponse getTripDetailsResult() {
+	public TripDetailsResult getTripDetailsResult() {
 		return tripDetailsResult;
 	}
 
-	public void setTripDetailsResult(TripDetailsResponse tripDetailsResult) {
+	public void setTripDetailsResult(TripDetailsResult tripDetailsResult) {
 		this.tripDetailsResult = tripDetailsResult;
 	}
 
-	public DataTripdetail(TripDetailsResponse tripDetailsResult) {
+	public DataTripdetail(TripDetailsResult tripDetailsResult) {
 		super();
 		this.tripDetailsResult = tripDetailsResult;
 	}
@@ -22,7 +22,6 @@ public class DataTripdetail {
 	public DataTripdetail() {
 		super();
 	}
-	 
+	
+
 	}
-
-

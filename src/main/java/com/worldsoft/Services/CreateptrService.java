@@ -19,7 +19,7 @@ import com.worldsoft.ptrentitiesResponse.Createptresponse;
 public class CreateptrService {
 	@Autowired
 	private SessionService sessionService;
-	public Createptresponse addpt (Createptrequest  Createptrequest) {
+	public Createptresponse addpt (Createptrequest  createptrequest) {
 		try {
 			String userName = "WSGXML";
 			String accountNumber = "MCN000018";
@@ -34,7 +34,7 @@ public class CreateptrService {
 			headers.set("Authorization", "Bearer " + sessionId);
 
 		RestTemplate restTemplate = new RestTemplate();
-		HttpEntity<Createptrequest> entity = new HttpEntity<>(Createptrequest, headers);
+		HttpEntity<Createptrequest> entity = new HttpEntity<>(createptrequest, headers);
 		URI url = new URI("https://restapidemo.myfarebox.com/api/PostTicketingRequest");
 		ResponseEntity<Createptresponse> createptresponse = restTemplate.exchange(url, HttpMethod.POST, entity,
 				Createptresponse.class);

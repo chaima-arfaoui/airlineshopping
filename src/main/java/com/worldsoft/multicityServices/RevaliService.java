@@ -1,4 +1,4 @@
-package com.worldsoft.Services;
+package com.worldsoft.multicityServices;
 
 import java.net.URI;
 
@@ -10,17 +10,21 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import com.worldsoft.Services.SessionService;
 import com.worldsoft.entitiesRequest.SessionRequest;
 import com.worldsoft.entitiesResponse.SessionResponse;
-import com.worldsoft.ptrentitiesRequest.Searchptrequest;
-import com.worldsoft.ptrentitiesResponse.Searchptresponse;
+import com.worldsoft.multicityRequest.RevalidationRequest;
+import com.worldsoft.multicityRequest.SearchRequest;
+import com.worldsoft.multicityResponse.RevalidationResponse;
+import com.worldsoft.multicityResponse.SearchResponse;
 
 @Service
-public class SearchptrService {
+public class RevaliService {
 	@Autowired
 	private SessionService sessionService;
 
-	public Searchptresponse searchptr (Searchptrequest searchptrequest) {
+	public RevalidationResponse revalide(RevalidationRequest revalidationRequest) {
 		try {
 			String userName = "WSGXML";
 			String accountNumber = "MCN000018";
@@ -33,16 +37,16 @@ public class SearchptrService {
 			headers.setContentType(MediaType.APPLICATION_JSON);
 
 			headers.set("Authorization", "Bearer " + sessionId);
-
 			RestTemplate restTemplate = new RestTemplate();
-			HttpEntity<Searchptrequest> entity = new HttpEntity<>(searchptrequest, headers);
-			URI url = new URI("https://restapidemo.myfarebox.com/api/Search/PostTicketingRequest");
-			ResponseEntity<Searchptresponse> Searchptresponse = restTemplate.exchange(url, HttpMethod.POST, entity,
-					Searchptresponse.class);
-			return Searchptresponse.getBody();
+			HttpEntity<RevalidationRequest> entity = new HttpEntity<>(revalidationRequest, headers);
+			URI url = new URI("https://restapidemo.myfarebox.com/api/v1/multiCityFaresBETA/Revalidate/Flight");
+			ResponseEntity<RevalidationResponse> revalidationResponse = restTemplate.exchange(url, HttpMethod.POST,
+					entity, RevalidationResponse.class);
 
+			return revalidationResponse.getBody();
 		} catch (Exception e) {
 			return null;
 		}
 	}
+
 }

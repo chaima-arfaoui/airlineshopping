@@ -10,17 +10,19 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
 import com.worldsoft.entitiesRequest.SessionRequest;
 import com.worldsoft.entitiesResponse.SessionResponse;
-import com.worldsoft.ptrentitiesRequest.Searchptrequest;
-import com.worldsoft.ptrentitiesResponse.Searchptresponse;
+import com.worldsoft.ptrentitiesRequest.Createptrequest;
+import com.worldsoft.ptrentitiesRequest.MarkasheadRequest;
+import com.worldsoft.ptrentitiesResponse.Createptresponse;
+import com.worldsoft.ptrentitiesResponse.MarkasheadResponse;
 
 @Service
-public class SearchptrService {
+public class MarkasheadService {
 	@Autowired
 	private SessionService sessionService;
-
-	public Searchptresponse searchptr (Searchptrequest searchptrequest) {
+	public MarkasheadResponse addpt (MarkasheadRequest  markasheadRequest) {
 		try {
 			String userName = "WSGXML";
 			String accountNumber = "MCN000018";
@@ -31,18 +33,21 @@ public class SearchptrService {
 			sessionId = res.getData().getSessionId();
 			HttpHeaders headers = new HttpHeaders();
 			headers.setContentType(MediaType.APPLICATION_JSON);
-
+			
 			headers.set("Authorization", "Bearer " + sessionId);
 
-			RestTemplate restTemplate = new RestTemplate();
-			HttpEntity<Searchptrequest> entity = new HttpEntity<>(searchptrequest, headers);
-			URI url = new URI("https://restapidemo.myfarebox.com/api/Search/PostTicketingRequest");
-			ResponseEntity<Searchptresponse> Searchptresponse = restTemplate.exchange(url, HttpMethod.POST, entity,
-					Searchptresponse.class);
-			return Searchptresponse.getBody();
+		RestTemplate restTemplate = new RestTemplate();
+		HttpEntity<MarkasheadRequest> entity = new HttpEntity<>(markasheadRequest, headers);
+		URI url = new URI("https://restapidemo.myfarebox.com/api/PostTicketingRequest");
+		ResponseEntity<MarkasheadResponse> markasheadResponse = restTemplate.exchange(url, HttpMethod.POST, entity,
+				MarkasheadResponse.class);
+		return markasheadResponse.getBody() ;
 
-		} catch (Exception e) {
-			return null;
+		}catch (Exception e) {
+			   return null;
+				}
+				}
 		}
-	}
-}
+
+
+

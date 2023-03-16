@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.worldsoft.Services.CreateptrService;
-import com.worldsoft.ptrentitiesRequest.Createptrequest;
+import com.worldsoft.ptrentitiesRequest.VoidPostRequest;
 import com.worldsoft.ptrentitiesResponse.Createptresponse;
 
 @CrossOrigin("*")
@@ -17,8 +17,8 @@ public class CreateptrController {
 	@Autowired
 	private CreateptrService createptrService;
 	@PostMapping("/create")
-	public Createptresponse ajouterptr (@RequestBody Createptrequest createptrequest) {
-		return createptrService.addpt(createptrequest);
+	public Createptresponse ajouterptr (@RequestBody VoidPostRequest voidPostRequest) {
+		return createptrService.addpt(voidPostRequest);
 
 	}
 

@@ -1,4 +1,4 @@
-package com.worldsoft.Services;
+package com.worldsoft.ptrServices;
 
 import java.net.URI;
 
@@ -11,18 +11,19 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.worldsoft.Services.SessionService;
 import com.worldsoft.entitiesRequest.SessionRequest;
 import com.worldsoft.entitiesResponse.SessionResponse;
+import com.worldsoft.ptrentitiesRequest.Searchptrequest;
 import com.worldsoft.ptrentitiesRequest.VoidPostRequest;
-import com.worldsoft.ptrentitiesRequest.MarkasreadRequest;
-import com.worldsoft.ptrentitiesResponse.Createptresponse;
-import com.worldsoft.ptrentitiesResponse.MarkasreadResponse;
-
+import com.worldsoft.ptrentitiesResponse.Searchptresponse;
+import com.worldsoft.ptrentitiesResponse.VoidPostResponse;
 @Service
-public class MarkasreadService {
+public class SearchvoidService {
 	@Autowired
 	private SessionService sessionService;
-	public MarkasreadResponse addmark (MarkasreadRequest  markasreadRequest) {
+
+	public Searchptresponse getdetaails(Searchptrequest searchptrequest) {
 		try {
 			String userName = "WSGXML";
 			String accountNumber = "MCN000018";
@@ -33,21 +34,18 @@ public class MarkasreadService {
 			sessionId = res.getData().getSessionId();
 			HttpHeaders headers = new HttpHeaders();
 			headers.setContentType(MediaType.APPLICATION_JSON);
-			
+
 			headers.set("Authorization", "Bearer " + sessionId);
+			RestTemplate restTemplate = new RestTemplate();
+			HttpEntity<Searchptrequest> entity = new HttpEntity<>(searchptrequest, headers);
+			URI url = new URI("https://restapidemo.myfarebox.com/api/Search/PostTicketingRequest");
+			ResponseEntity<Searchptresponse> searchptresponse = restTemplate.exchange(url, HttpMethod.POST, entity,
+					Searchptresponse.class);
 
-		RestTemplate restTemplate = new RestTemplate();
-		HttpEntity<MarkasreadRequest> entity = new HttpEntity<>(markasreadRequest, headers);
-		URI url = new URI("https://restapidemo.myfarebox.com/api/MarkAsRead");
-		ResponseEntity<MarkasreadResponse> markasreadResponse = restTemplate.exchange(url, HttpMethod.POST, entity,
-				MarkasreadResponse.class);
-		return markasreadResponse.getBody() ;
-
-		}catch (Exception e) {
-			   return null;
-				}
-				}
+			return searchptresponse.getBody();
+		} catch (Exception e) {
+			return null;
 		}
+	}
 
-
-
+}

@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class VoidQuoteRequest {
-	public String ptrType;
-	public String mFRef;
-	@JsonProperty("AllowChildPassenger")
-	public boolean allowChildPassenger;
-	public ArrayList<Passenger> passengers;
+public class PostRefundRequest {
+	private String ptrType;
+	private String mFRef;
+	private ArrayList<Passenger> passengers;
+	@JsonProperty("AdditionalNote")
+	private String additionalNote;
 
 	public String getPtrType() {
 		return ptrType;
@@ -27,14 +27,6 @@ public class VoidQuoteRequest {
 		this.mFRef = mFRef;
 	}
 
-	public boolean isAllowChildPassenger() {
-		return allowChildPassenger;
-	}
-
-	public void setAllowChildPassenger(boolean allowChildPassenger) {
-		this.allowChildPassenger = allowChildPassenger;
-	}
-
 	public ArrayList<Passenger> getPassengers() {
 		return passengers;
 	}
@@ -43,16 +35,23 @@ public class VoidQuoteRequest {
 		this.passengers = passengers;
 	}
 
-	public VoidQuoteRequest(String ptrType, String mFRef, boolean allowChildPassenger,
-			ArrayList<Passenger> passengers) {
+	public String getAdditionalNote() {
+		return additionalNote;
+	}
+
+	public void setAdditionalNote(String additionalNote) {
+		this.additionalNote = additionalNote;
+	}
+
+	public PostRefundRequest(String ptrType, String mFRef, ArrayList<Passenger> passengers, String additionalNote) {
 		super();
 		this.ptrType = ptrType;
 		this.mFRef = mFRef;
-		this.allowChildPassenger = allowChildPassenger;
 		this.passengers = passengers;
+		this.additionalNote = additionalNote;
 	}
 
-	public VoidQuoteRequest() {
+	public PostRefundRequest() {
 		super();
 	}
 

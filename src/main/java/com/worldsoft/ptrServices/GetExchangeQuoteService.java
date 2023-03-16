@@ -1,4 +1,4 @@
-package com.worldsoft.Services;
+package com.worldsoft.ptrServices;
 
 import java.net.URI;
 
@@ -10,16 +10,21 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
+
+import com.worldsoft.Services.SessionService;
 import com.worldsoft.entitiesRequest.SessionRequest;
 import com.worldsoft.entitiesResponse.SessionResponse;
-import com.worldsoft.ptrentitiesRequest.VoidPostRequest;
-import com.worldsoft.ptrentitiesResponse.Createptresponse;
+import com.worldsoft.ptrentitiesRequest.GetExchangeQuoteRequest;
+import com.worldsoft.ptrentitiesRequest.VoidQuoteRequest;
+import com.worldsoft.ptrentitiesResponse.GetExchangeQuoteResponse;
+import com.worldsoft.ptrentitiesResponse.VoidQuoteResponse;
 
 @Service
-public class CreateptrService {
+public class GetExchangeQuoteService {
 	@Autowired
 	private SessionService sessionService;
-	public Createptresponse addpt (VoidPostRequest  voidPostRequest) {
+
+	public GetExchangeQuoteResponse getdetaails(GetExchangeQuoteRequest getExchangeQuoteRequest) {
 		try {
 			String userName = "WSGXML";
 			String accountNumber = "MCN000018";
@@ -30,18 +35,19 @@ public class CreateptrService {
 			sessionId = res.getData().getSessionId();
 			HttpHeaders headers = new HttpHeaders();
 			headers.setContentType(MediaType.APPLICATION_JSON);
-			
+
 			headers.set("Authorization", "Bearer " + sessionId);
+			RestTemplate restTemplate = new RestTemplate();
+			HttpEntity<GetExchangeQuoteRequest> entity = new HttpEntity<>(getExchangeQuoteRequest, headers);
+			URI url = new URI("https://restapidemo.myfarebox.com/api/Search/PostTicketingRequest");
+			ResponseEntity<GetExchangeQuoteResponse> getExchangeQuoteResponse = restTemplate.exchange(url, HttpMethod.POST, entity,
+					GetExchangeQuoteResponse.class);
 
-		RestTemplate restTemplate = new RestTemplate();
-		HttpEntity<VoidPostRequest> entity = new HttpEntity<>(voidPostRequest, headers);
-		URI url = new URI("https://restapidemo.myfarebox.com/api/PostTicketingRequest");
-		ResponseEntity<Createptresponse> createptresponse = restTemplate.exchange(url, HttpMethod.POST, entity,
-				Createptresponse.class);
-		return createptresponse.getBody() ;
-
-		}catch (Exception e) {
-			   return null;
-				}
-				}
+			return getExchangeQuoteResponse.getBody();
+		} catch (Exception e) {
+			return null;
 		}
+	}
+
+
+}

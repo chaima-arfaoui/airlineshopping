@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class Createptrequest {
+public class VoidPostRequest {
 	public String ptrType;
 	public String mFRef;
 	public ArrayList<Passenger> passengers;
@@ -43,7 +43,7 @@ public class Createptrequest {
 		this.additionalNote = additionalNote;
 	}
 
-	public Createptrequest(String ptrType, String mFRef, ArrayList<Passenger> passengers, String additionalNote) {
+	public VoidPostRequest(String ptrType, String mFRef, ArrayList<Passenger> passengers, String additionalNote) {
 		super();
 		this.ptrType = ptrType;
 		this.mFRef = mFRef;
@@ -51,7 +51,7 @@ public class Createptrequest {
 		this.additionalNote = additionalNote;
 	}
 
-	public Createptrequest() {
+	public VoidPostRequest() {
 		super();
 	}
 

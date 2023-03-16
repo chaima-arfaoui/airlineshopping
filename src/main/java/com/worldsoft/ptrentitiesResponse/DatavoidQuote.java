@@ -6,87 +6,121 @@ import java.util.Date;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class DatavoidQuote {
-	@JsonProperty("PTRId")
-	private int pTRId;
-	@JsonProperty("PTRType")
-	private String pTRType;
-	@JsonProperty("MFRef")
-	private String mFRef;
-	@JsonProperty("SLAInMinutes")
-	private int sLAInMinutes;
-	@JsonProperty("PTRStatus")
-	private String pTRStatus;
-	@JsonProperty("VoidingWindow")
-	private Date voidingWindow;
-	@JsonProperty("VoidQuotes")
-	private ArrayList<VoidQuote> voidQuotes;
 
-	public int getpTRId() {
-		return pTRId;
+	@JsonProperty("FirstName")
+	public String firstName;
+	@JsonProperty("LastName")
+	public String lastName;
+	@JsonProperty("Title")
+	public String title;
+	@JsonProperty("PassengerType")
+	public String passengerType;
+	@JsonProperty("ETicket")
+	public String eTicket;
+	@JsonProperty("AdminCharges")
+	public String adminCharges;
+	@JsonProperty("GSTCharge")
+	public String gSTCharge;
+	@JsonProperty("TotalVoidingFee")
+	public String totalVoidingFee;
+	@JsonProperty("TotalRefundAmount")
+	public String totalRefundAmount;
+	@JsonProperty("Currency")
+	public String currency;
+
+	public String getFirstName() {
+		return firstName;
 	}
 
-	public void setpTRId(int pTRId) {
-		this.pTRId = pTRId;
+	public void setFirstName(String firstName) {
+		this.firstName = firstName;
 	}
 
-	public String getpTRType() {
-		return pTRType;
+	public String getLastName() {
+		return lastName;
 	}
 
-	public void setpTRType(String pTRType) {
-		this.pTRType = pTRType;
+	public void setLastName(String lastName) {
+		this.lastName = lastName;
 	}
 
-	public String getmFRef() {
-		return mFRef;
+	public String getTitle() {
+		return title;
 	}
 
-	public void setmFRef(String mFRef) {
-		this.mFRef = mFRef;
+	public void setTitle(String title) {
+		this.title = title;
 	}
 
-	public int getsLAInMinutes() {
-		return sLAInMinutes;
+	public String getPassengerType() {
+		return passengerType;
 	}
 
-	public void setsLAInMinutes(int sLAInMinutes) {
-		this.sLAInMinutes = sLAInMinutes;
+	public void setPassengerType(String passengerType) {
+		this.passengerType = passengerType;
 	}
 
-	public String getpTRStatus() {
-		return pTRStatus;
+	public String geteTicket() {
+		return eTicket;
 	}
 
-	public void setpTRStatus(String pTRStatus) {
-		this.pTRStatus = pTRStatus;
+	public void seteTicket(String eTicket) {
+		this.eTicket = eTicket;
 	}
 
-	public Date getVoidingWindow() {
-		return voidingWindow;
+	public String getAdminCharges() {
+		return adminCharges;
 	}
 
-	public void setVoidingWindow(Date voidingWindow) {
-		this.voidingWindow = voidingWindow;
+	public void setAdminCharges(String adminCharges) {
+		this.adminCharges = adminCharges;
 	}
 
-	public ArrayList<VoidQuote> getVoidQuotes() {
-		return voidQuotes;
+	public String getgSTCharge() {
+		return gSTCharge;
 	}
 
-	public void setVoidQuotes(ArrayList<VoidQuote> voidQuotes) {
-		this.voidQuotes = voidQuotes;
+	public void setgSTCharge(String gSTCharge) {
+		this.gSTCharge = gSTCharge;
 	}
 
-	public DatavoidQuote(int pTRId, String pTRType, String mFRef, int sLAInMinutes, String pTRStatus,
-			Date voidingWindow, ArrayList<VoidQuote> voidQuotes) {
+	public String getTotalVoidingFee() {
+		return totalVoidingFee;
+	}
+
+	public void setTotalVoidingFee(String totalVoidingFee) {
+		this.totalVoidingFee = totalVoidingFee;
+	}
+
+	public String getTotalRefundAmount() {
+		return totalRefundAmount;
+	}
+
+	public void setTotalRefundAmount(String totalRefundAmount) {
+		this.totalRefundAmount = totalRefundAmount;
+	}
+
+	public String getCurrency() {
+		return currency;
+	}
+
+	public void setCurrency(String currency) {
+		this.currency = currency;
+	}
+
+	public DatavoidQuote(String firstName, String lastName, String title, String passengerType, String eTicket,
+			String adminCharges, String gSTCharge, String totalVoidingFee, String totalRefundAmount, String currency) {
 		super();
-		this.pTRId = pTRId;
-		this.pTRType = pTRType;
-		this.mFRef = mFRef;
-		this.sLAInMinutes = sLAInMinutes;
-		this.pTRStatus = pTRStatus;
-		this.voidingWindow = voidingWindow;
-		this.voidQuotes = voidQuotes;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.title = title;
+		this.passengerType = passengerType;
+		this.eTicket = eTicket;
+		this.adminCharges = adminCharges;
+		this.gSTCharge = gSTCharge;
+		this.totalVoidingFee = totalVoidingFee;
+		this.totalRefundAmount = totalRefundAmount;
+		this.currency = currency;
 	}
 
 	public DatavoidQuote() {

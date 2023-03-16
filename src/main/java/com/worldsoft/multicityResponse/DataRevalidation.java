@@ -6,14 +6,19 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class DataRevalidation {
 	@JsonProperty("Success")
-	private boolean success;
+	public boolean success;
+	@JsonProperty("IsValid")
+	public boolean isValid;
+	@JsonProperty("FareSourceCode")
+	public String fareSourceCode;
 	@JsonProperty("ConversationId")
-	private String conversationId;
-	private ArrayList<MultiCityFare> multiCityFares;
+	public String conversationId;
+	@JsonProperty("PricedItineraries")
+	public Object pricedItineraries;
 	@JsonProperty("Target")
-	private String target;
+	public String target;
 	@JsonProperty("Errors")
-	private Object errors;
+	public ArrayList<Error> errors;
 
 	public boolean isSuccess() {
 		return success;
@@ -21,6 +26,22 @@ public class DataRevalidation {
 
 	public void setSuccess(boolean success) {
 		this.success = success;
+	}
+
+	public boolean isValid() {
+		return isValid;
+	}
+
+	public void setValid(boolean isValid) {
+		this.isValid = isValid;
+	}
+
+	public String getFareSourceCode() {
+		return fareSourceCode;
+	}
+
+	public void setFareSourceCode(String fareSourceCode) {
+		this.fareSourceCode = fareSourceCode;
 	}
 
 	public String getConversationId() {
@@ -31,12 +52,12 @@ public class DataRevalidation {
 		this.conversationId = conversationId;
 	}
 
-	public ArrayList<MultiCityFare> getMultiCityFares() {
-		return multiCityFares;
+	public Object getPricedItineraries() {
+		return pricedItineraries;
 	}
 
-	public void setMultiCityFares(ArrayList<MultiCityFare> multiCityFares) {
-		this.multiCityFares = multiCityFares;
+	public void setPricedItineraries(Object pricedItineraries) {
+		this.pricedItineraries = pricedItineraries;
 	}
 
 	public String getTarget() {
@@ -47,20 +68,22 @@ public class DataRevalidation {
 		this.target = target;
 	}
 
-	public Object getErrors() {
+	public ArrayList<Error> getErrors() {
 		return errors;
 	}
 
-	public void setErrors(Object errors) {
+	public void setErrors(ArrayList<Error> errors) {
 		this.errors = errors;
 	}
 
-	public DataRevalidation(boolean success, String conversationId, ArrayList<MultiCityFare> multiCityFares, String target,
-			Object errors) {
+	public DataRevalidation(boolean success, boolean isValid, String fareSourceCode, String conversationId,
+			Object pricedItineraries, String target, ArrayList<Error> errors) {
 		super();
 		this.success = success;
+		this.isValid = isValid;
+		this.fareSourceCode = fareSourceCode;
 		this.conversationId = conversationId;
-		this.multiCityFares = multiCityFares;
+		this.pricedItineraries = pricedItineraries;
 		this.target = target;
 		this.errors = errors;
 	}

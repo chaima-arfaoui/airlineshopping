@@ -10,9 +10,9 @@ public class StopQuantityInformation {
 	@JsonProperty("StopOverEquipment")
 	private Object stopOverEquipment;
 	@JsonProperty("ArrivalDateTime")
-	private Date arrivalDateTime;
+	private String arrivalDateTime;
 	@JsonProperty("DepartureDateTime")
-	private Date departureDateTime;
+	private String departureDateTime;
 	@JsonProperty("Duration")
 	private int duration;
 
@@ -32,19 +32,19 @@ public class StopQuantityInformation {
 		this.stopOverEquipment = stopOverEquipment;
 	}
 
-	public Date getArrivalDateTime() {
+	public String getArrivalDateTime() {
 		return arrivalDateTime;
 	}
 
-	public void setArrivalDateTime(Date arrivalDateTime) {
+	public void setArrivalDateTime(String arrivalDateTime) {
 		this.arrivalDateTime = arrivalDateTime;
 	}
 
-	public Date getDepartureDateTime() {
+	public String getDepartureDateTime() {
 		return departureDateTime;
 	}
 
-	public void setDepartureDateTime(Date departureDateTime) {
+	public void setDepartureDateTime(String departureDateTime) {
 		this.departureDateTime = departureDateTime;
 	}
 
@@ -56,8 +56,8 @@ public class StopQuantityInformation {
 		this.duration = duration;
 	}
 
-	public StopQuantityInformation(String locationCode, Object stopOverEquipment, Date arrivalDateTime,
-			Date departureDateTime, int duration) {
+	public StopQuantityInformation(String locationCode, Object stopOverEquipment, String arrivalDateTime,
+			String departureDateTime, int duration) {
 		super();
 		this.locationCode = locationCode;
 		this.stopOverEquipment = stopOverEquipment;

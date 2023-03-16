@@ -79,13 +79,7 @@ public class FlightService {
 		
 		    
 		    
-//		    File folderFres = new File(System.getProperty("user.dir") + File.separator + "Fres");
-//		    if (!folderFres.exists()) {
-//	        folderFres.mkdir(); }
-//		    File query1 = new File(System.getProperty("user.dir") + File.separator
-//		    		            		    		  + "Fres" + File.separator
-//		    		            		    		   + format.format(now, stringBuffer, new FieldPosition(0)) + fres.getClass() + ".json");
-//		    		                        
+		                        
 		         
 		
 		   return flightResponse.getBody() ;                   

@@ -45,9 +45,9 @@ public class FlightSegment {
 	@JsonProperty("LegIndicator")
 	private int legIndicator;
 	@JsonProperty("DepartureDateTime")
-	private Date departureDateTime;
+	private String departureDateTime;
 	@JsonProperty("ArrivalDateTime")
-	private Date arrivalDateTime;
+	private String arrivalDateTime;
 	@JsonProperty("StopQuantity")
 	private int stopQuantity;
 	@JsonProperty("JourneyDuration")
@@ -208,19 +208,19 @@ public class FlightSegment {
 		this.legIndicator = legIndicator;
 	}
 
-	public Date getDepartureDateTime() {
+	public String getDepartureDateTime() {
 		return departureDateTime;
 	}
 
-	public void setDepartureDateTime(Date departureDateTime) {
+	public void setDepartureDateTime(String departureDateTime) {
 		this.departureDateTime = departureDateTime;
 	}
 
-	public Date getArrivalDateTime() {
+	public String getArrivalDateTime() {
 		return arrivalDateTime;
 	}
 
-	public void setArrivalDateTime(Date arrivalDateTime) {
+	public void setArrivalDateTime(String arrivalDateTime) {
 		this.arrivalDateTime = arrivalDateTime;
 	}
 
@@ -261,8 +261,8 @@ public class FlightSegment {
 			String marriageGroup, StopQuantityInfo stopQuantityInfo,
 			ArrayList<StopQuantityInformation> stopQuantityInformations, String cabinClassCode, String resBookDesigText,
 			String cabinClassText, String mealCode, SeatsRemaining seatsRemaining, String airlinePNR, Object baggage,
-			Object cabinBaggage, Object fareBasisCodes, int legIndicator, Date departureDateTime, Date arrivalDateTime,
-			int stopQuantity, int journeyDuration, boolean eticket, boolean isReturn) {
+			Object cabinBaggage, Object fareBasisCodes, int legIndicator, String departureDateTime,
+			String arrivalDateTime, int stopQuantity, int journeyDuration, boolean eticket, boolean isReturn) {
 		super();
 		this.flightNumber = flightNumber;
 		this.resBookDesigCode = resBookDesigCode;

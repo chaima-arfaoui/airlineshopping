@@ -37,9 +37,9 @@ public class SearchptrService {
 			RestTemplate restTemplate = new RestTemplate();
 			HttpEntity<Searchptrequest> entity = new HttpEntity<>(searchptrequest, headers);
 			URI url = new URI("https://restapidemo.myfarebox.com/api/Search/PostTicketingRequest");
-			ResponseEntity<Searchptresponse> Searchptresponse = restTemplate.exchange(url, HttpMethod.POST, entity,
+			ResponseEntity<Searchptresponse> searchptresponse = restTemplate.exchange(url, HttpMethod.POST, entity,
 					Searchptresponse.class);
-			return Searchptresponse.getBody();
+			return searchptresponse.getBody();
 
 		} catch (Exception e) {
 			return null;

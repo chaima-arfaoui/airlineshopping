@@ -6,17 +6,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class OriginDestinationInformation {
 	@JsonProperty("DepartureDateTime")
-	private Date departureDateTime;
+	private String departureDateTime;
 	@JsonProperty("OriginLocationCode")
 	private String originLocationCode;
 	@JsonProperty("DestinationLocationCode")
 	private String destinationLocationCode;
 
-	public Date getDepartureDateTime() {
+	public String getDepartureDateTime() {
 		return departureDateTime;
 	}
 
-	public void setDepartureDateTime(Date departureDateTime) {
+	public void setDepartureDateTime(String departureDateTime) {
 		this.departureDateTime = departureDateTime;
 	}
 
@@ -36,7 +36,7 @@ public class OriginDestinationInformation {
 		this.destinationLocationCode = destinationLocationCode;
 	}
 
-	public OriginDestinationInformation(Date departureDateTime, String originLocationCode,
+	public OriginDestinationInformation(String departureDateTime, String originLocationCode,
 			String destinationLocationCode) {
 		super();
 		this.departureDateTime = departureDateTime;

@@ -1,22 +1,24 @@
 package com.worldsoft.multicityResponse;
 
+import java.util.ArrayList;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class Databooking {
 	@JsonProperty("Success")
-	private boolean success;
+	public boolean success;
 	@JsonProperty("UniqueID")
-	private String uniqueID;
+	public Object uniqueID;
 	@JsonProperty("Status")
-	private String status;
+	public Object status;
 	@JsonProperty("Errors")
-	private Object errors;
+	public ArrayList<Error> errors;
 	@JsonProperty("Target")
-	private String target;
+	public String target;
 	@JsonProperty("ConversationId")
-	private String conversationId;
+	public String conversationId;
 	@JsonProperty("ClientUTCOffset")
-	private double clientUTCOffset;
+	public double clientUTCOffset;
 
 	public boolean isSuccess() {
 		return success;
@@ -26,27 +28,27 @@ public class Databooking {
 		this.success = success;
 	}
 
-	public String getUniqueID() {
+	public Object getUniqueID() {
 		return uniqueID;
 	}
 
-	public void setUniqueID(String uniqueID) {
+	public void setUniqueID(Object uniqueID) {
 		this.uniqueID = uniqueID;
 	}
 
-	public String getStatus() {
+	public Object getStatus() {
 		return status;
 	}
 
-	public void setStatus(String status) {
+	public void setStatus(Object status) {
 		this.status = status;
 	}
 
-	public Object getErrors() {
+	public ArrayList<Error> getErrors() {
 		return errors;
 	}
 
-	public void setErrors(Object errors) {
+	public void setErrors(ArrayList<Error> errors) {
 		this.errors = errors;
 	}
 
@@ -74,7 +76,7 @@ public class Databooking {
 		this.clientUTCOffset = clientUTCOffset;
 	}
 
-	public Databooking(boolean success, String uniqueID, String status, Object errors, String target,
+	public Databooking(boolean success, Object uniqueID, Object status, ArrayList<Error> errors, String target,
 			String conversationId, double clientUTCOffset) {
 		super();
 		this.success = success;

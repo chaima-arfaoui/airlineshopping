@@ -2,7 +2,7 @@ package com.worldsoft.ptrentitiesRequest;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class MarkasheadRequest {
+public class MarkasreadRequest {
 	private String id;
 	private String requestType;
 	@JsonProperty("MFRef")
@@ -32,14 +32,14 @@ public class MarkasheadRequest {
 		this.mFRef = mFRef;
 	}
 
-	public MarkasheadRequest(String id, String requestType, String mFRef) {
+	public MarkasreadRequest(String id, String requestType, String mFRef) {
 		super();
 		this.id = id;
 		this.requestType = requestType;
 		this.mFRef = mFRef;
 	}
 
-	public MarkasheadRequest() {
+	public MarkasreadRequest() {
 		super();
 	}
 

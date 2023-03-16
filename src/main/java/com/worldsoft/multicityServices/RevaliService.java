@@ -15,9 +15,8 @@ import com.worldsoft.Services.SessionService;
 import com.worldsoft.entitiesRequest.SessionRequest;
 import com.worldsoft.entitiesResponse.SessionResponse;
 import com.worldsoft.multicityRequest.RevalidationRequest;
-import com.worldsoft.multicityRequest.SearchRequest;
 import com.worldsoft.multicityResponse.RevalidationResponse;
-import com.worldsoft.multicityResponse.SearchResponse;
+
 
 @Service
 public class RevaliService {

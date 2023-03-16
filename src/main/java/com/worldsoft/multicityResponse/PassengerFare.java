@@ -5,87 +5,65 @@ import java.util.ArrayList;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class PassengerFare {
+	@JsonProperty("PaxType")
+	public String paxType;
+	@JsonProperty("Quantity")
+	public int quantity;
 	@JsonProperty("BaseFare")
-	private BaseFare baseFare;
-	@JsonProperty("EquivFare")
-	private EquivFare equivFare;
-	@JsonProperty("Taxes")
-	private ArrayList<Taxis> taxes;
-	@JsonProperty("ServiceTax")
-	private Object serviceTax;
+	public String baseFare;
+	@JsonProperty("TaxBreakUp")
+	public ArrayList<TaxBreakUp> taxBreakUp;
 	@JsonProperty("TotalFare")
-	private TotalFare totalFare;
-	@JsonProperty("ActualFare")
-	private ActualFare actualFare;
-	@JsonProperty("Surcharges")
-	private ArrayList<Object> surcharges;
+	public String totalFare;
 
-	public BaseFare getBaseFare() {
+	public String getPaxType() {
+		return paxType;
+	}
+
+	public void setPaxType(String paxType) {
+		this.paxType = paxType;
+	}
+
+	public int getQuantity() {
+		return quantity;
+	}
+
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}
+
+	public String getBaseFare() {
 		return baseFare;
 	}
 
-	public void setBaseFare(BaseFare baseFare) {
+	public void setBaseFare(String baseFare) {
 		this.baseFare = baseFare;
 	}
 
-	public EquivFare getEquivFare() {
-		return equivFare;
+	public ArrayList<TaxBreakUp> getTaxBreakUp() {
+		return taxBreakUp;
 	}
 
-	public void setEquivFare(EquivFare equivFare) {
-		this.equivFare = equivFare;
+	public void setTaxBreakUp(ArrayList<TaxBreakUp> taxBreakUp) {
+		this.taxBreakUp = taxBreakUp;
 	}
 
-	public ArrayList<Taxis> getTaxes() {
-		return taxes;
-	}
-
-	public void setTaxes(ArrayList<Taxis> taxes) {
-		this.taxes = taxes;
-	}
-
-	public Object getServiceTax() {
-		return serviceTax;
-	}
-
-	public void setServiceTax(Object serviceTax) {
-		this.serviceTax = serviceTax;
-	}
-
-	public TotalFare getTotalFare() {
+	public String getTotalFare() {
 		return totalFare;
 	}
 
-	public void setTotalFare(TotalFare totalFare) {
+	public void setTotalFare(String totalFare) {
 		this.totalFare = totalFare;
 	}
 
-	public ActualFare getActualFare() {
-		return actualFare;
-	}
-
-	public void setActualFare(ActualFare actualFare) {
-		this.actualFare = actualFare;
-	}
-
-	public ArrayList<Object> getSurcharges() {
-		return surcharges;
-	}
-
-	public void setSurcharges(ArrayList<Object> surcharges) {
-		this.surcharges = surcharges;
-	}
-
-	public PassengerFare(BaseFare baseFare, EquivFare equivFare, ArrayList<Taxis> taxes, Object serviceTax,
-			TotalFare totalFare, ActualFare actualFare, ArrayList<Object> surcharges) {
+	public PassengerFare(String paxType, int quantity, String baseFare, ArrayList<TaxBreakUp> taxBreakUp,
+			String totalFare) {
 		super();
+		this.paxType = paxType;
+		this.quantity = quantity;
 		this.baseFare = baseFare;
-		this.equivFare = equivFare;
-		this.taxes = taxes;
-		this.serviceTax = serviceTax;
+		this.taxBreakUp = taxBreakUp;
 		this.totalFare = totalFare;
-		this.actualFare = actualFare;
-		this.surcharges = surcharges;
 	}
 
 	public PassengerFare() {

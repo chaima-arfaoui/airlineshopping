@@ -5,191 +5,77 @@ import java.util.ArrayList;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class PricedItinerary {
-	@JsonProperty("RequiredFieldsToBookInOtherLanguages")
-	private ArrayList<Object> requiredFieldsToBookInOtherLanguages;
-	@JsonProperty("OriginDestinationOptions")
-	private ArrayList<OriginDestinationOption> originDestinationOptions;
-	@JsonProperty("AirItineraryPricingInfo")
-	private AirItineraryPricingInfo airItineraryPricingInfo;
-	@JsonProperty("ExtraServices1_1")
-	private Object extraServices1_1;
-	@JsonProperty("RequiredFieldsToBook")
-	private Object requiredFieldsToBook;
-	@JsonProperty("SequenceNumber")
-	private int sequenceNumber;
-	@JsonProperty("DirectionInd")
-	private String directionInd;
-	@JsonProperty("TicketType")
-	private String ticketType;
-	@JsonProperty("ValidatingAirlineCode")
-	private String validatingAirlineCode;
-	@JsonProperty("IsPassportMandatory")
-	private boolean isPassportMandatory;
-	@JsonProperty("IsResidentFare")
-	private boolean isResidentFare;
-	@JsonProperty("ResidentFareDocumentTypeLists")
-	private Object residentFareDocumentTypeLists;
-	@JsonProperty("PaxNameCharacterLimit")
-	private int paxNameCharacterLimit;
-	@JsonProperty("FirstNameCharacterLimit")
-	private int firstNameCharacterLimit;
-	@JsonProperty("LastNameCharacterLimit")
-	private int lastNameCharacterLimit;
-	@JsonProperty("Fulfillmentdetails")
-	private Fulfillmentdetails fulfillmentdetails;
+	@JsonProperty("FareSourceCode")
+	public String fareSourceCode;
+	@JsonProperty("ValidatingCarrier")
+	public String validatingCarrier;
+	@JsonProperty("OriginDestinations")
+	public ArrayList<OriginDestination> originDestinations;
+	@JsonProperty("FareRef")
+	public int fareRef;
+	@JsonProperty("PenaltiesInfoRef")
+	public int penaltiesInfoRef;
+	@JsonProperty("FulfillmentDetailsRef")
+	public int fulfillmentDetailsRef;
 
-	public ArrayList<Object> getRequiredFieldsToBookInOtherLanguages() {
-		return requiredFieldsToBookInOtherLanguages;
+	public String getFareSourceCode() {
+		return fareSourceCode;
 	}
 
-	public void setRequiredFieldsToBookInOtherLanguages(ArrayList<Object> requiredFieldsToBookInOtherLanguages) {
-		this.requiredFieldsToBookInOtherLanguages = requiredFieldsToBookInOtherLanguages;
+	public void setFareSourceCode(String fareSourceCode) {
+		this.fareSourceCode = fareSourceCode;
 	}
 
-	public ArrayList<OriginDestinationOption> getOriginDestinationOptions() {
-		return originDestinationOptions;
+	public String getValidatingCarrier() {
+		return validatingCarrier;
 	}
 
-	public void setOriginDestinationOptions(ArrayList<OriginDestinationOption> originDestinationOptions) {
-		this.originDestinationOptions = originDestinationOptions;
+	public void setValidatingCarrier(String validatingCarrier) {
+		this.validatingCarrier = validatingCarrier;
 	}
 
-	public AirItineraryPricingInfo getAirItineraryPricingInfo() {
-		return airItineraryPricingInfo;
+	public ArrayList<OriginDestination> getOriginDestinations() {
+		return originDestinations;
 	}
 
-	public void setAirItineraryPricingInfo(AirItineraryPricingInfo airItineraryPricingInfo) {
-		this.airItineraryPricingInfo = airItineraryPricingInfo;
+	public void setOriginDestinations(ArrayList<OriginDestination> originDestinations) {
+		this.originDestinations = originDestinations;
 	}
 
-	public Object getExtraServices1_1() {
-		return extraServices1_1;
+	public int getFareRef() {
+		return fareRef;
 	}
 
-	public void setExtraServices1_1(Object extraServices1_1) {
-		this.extraServices1_1 = extraServices1_1;
+	public void setFareRef(int fareRef) {
+		this.fareRef = fareRef;
 	}
 
-	public Object getRequiredFieldsToBook() {
-		return requiredFieldsToBook;
+	public int getPenaltiesInfoRef() {
+		return penaltiesInfoRef;
 	}
 
-	public void setRequiredFieldsToBook(Object requiredFieldsToBook) {
-		this.requiredFieldsToBook = requiredFieldsToBook;
+	public void setPenaltiesInfoRef(int penaltiesInfoRef) {
+		this.penaltiesInfoRef = penaltiesInfoRef;
 	}
 
-	public int getSequenceNumber() {
-		return sequenceNumber;
+	public int getFulfillmentDetailsRef() {
+		return fulfillmentDetailsRef;
 	}
 
-	public void setSequenceNumber(int sequenceNumber) {
-		this.sequenceNumber = sequenceNumber;
+	public void setFulfillmentDetailsRef(int fulfillmentDetailsRef) {
+		this.fulfillmentDetailsRef = fulfillmentDetailsRef;
 	}
 
-	public String getDirectionInd() {
-		return directionInd;
-	}
-
-	public void setDirectionInd(String directionInd) {
-		this.directionInd = directionInd;
-	}
-
-	public String getTicketType() {
-		return ticketType;
-	}
-
-	public void setTicketType(String ticketType) {
-		this.ticketType = ticketType;
-	}
-
-	public String getValidatingAirlineCode() {
-		return validatingAirlineCode;
-	}
-
-	public void setValidatingAirlineCode(String validatingAirlineCode) {
-		this.validatingAirlineCode = validatingAirlineCode;
-	}
-
-	public boolean isPassportMandatory() {
-		return isPassportMandatory;
-	}
-
-	public void setPassportMandatory(boolean isPassportMandatory) {
-		this.isPassportMandatory = isPassportMandatory;
-	}
-
-	public boolean isResidentFare() {
-		return isResidentFare;
-	}
-
-	public void setResidentFare(boolean isResidentFare) {
-		this.isResidentFare = isResidentFare;
-	}
-
-	public Object getResidentFareDocumentTypeLists() {
-		return residentFareDocumentTypeLists;
-	}
-
-	public void setResidentFareDocumentTypeLists(Object residentFareDocumentTypeLists) {
-		this.residentFareDocumentTypeLists = residentFareDocumentTypeLists;
-	}
-
-	public int getPaxNameCharacterLimit() {
-		return paxNameCharacterLimit;
-	}
-
-	public void setPaxNameCharacterLimit(int paxNameCharacterLimit) {
-		this.paxNameCharacterLimit = paxNameCharacterLimit;
-	}
-
-	public int getFirstNameCharacterLimit() {
-		return firstNameCharacterLimit;
-	}
-
-	public void setFirstNameCharacterLimit(int firstNameCharacterLimit) {
-		this.firstNameCharacterLimit = firstNameCharacterLimit;
-	}
-
-	public int getLastNameCharacterLimit() {
-		return lastNameCharacterLimit;
-	}
-
-	public void setLastNameCharacterLimit(int lastNameCharacterLimit) {
-		this.lastNameCharacterLimit = lastNameCharacterLimit;
-	}
-
-	public Fulfillmentdetails getFulfillmentdetails() {
-		return fulfillmentdetails;
-	}
-
-	public void setFulfillmentdetails(Fulfillmentdetails fulfillmentdetails) {
-		this.fulfillmentdetails = fulfillmentdetails;
-	}
-
-	public PricedItinerary(ArrayList<Object> requiredFieldsToBookInOtherLanguages,
-			ArrayList<OriginDestinationOption> originDestinationOptions,
-			AirItineraryPricingInfo airItineraryPricingInfo, Object extraServices1_1, Object requiredFieldsToBook,
-			int sequenceNumber, String directionInd, String ticketType, String validatingAirlineCode,
-			boolean isPassportMandatory, boolean isResidentFare, Object residentFareDocumentTypeLists,
-			int paxNameCharacterLimit, int firstNameCharacterLimit, int lastNameCharacterLimit,
-			Fulfillmentdetails fulfillmentdetails) {
+	public PricedItinerary(String fareSourceCode, String validatingCarrier,
+			ArrayList<OriginDestination> originDestinations, int fareRef, int penaltiesInfoRef,
+			int fulfillmentDetailsRef) {
 		super();
-		this.requiredFieldsToBookInOtherLanguages = requiredFieldsToBookInOtherLanguages;
-		this.originDestinationOptions = originDestinationOptions;
-		this.airItineraryPricingInfo = airItineraryPricingInfo;
-		this.extraServices1_1 = extraServices1_1;
-		this.requiredFieldsToBook = requiredFieldsToBook;
-		this.sequenceNumber = sequenceNumber;
-		this.directionInd = directionInd;
-		this.ticketType = ticketType;
-		this.validatingAirlineCode = validatingAirlineCode;
-		this.isPassportMandatory = isPassportMandatory;
-		this.isResidentFare = isResidentFare;
-		this.residentFareDocumentTypeLists = residentFareDocumentTypeLists;
-		this.paxNameCharacterLimit = paxNameCharacterLimit;
-		this.firstNameCharacterLimit = firstNameCharacterLimit;
-		this.lastNameCharacterLimit = lastNameCharacterLimit;
-		this.fulfillmentdetails = fulfillmentdetails;
+		this.fareSourceCode = fareSourceCode;
+		this.validatingCarrier = validatingCarrier;
+		this.originDestinations = originDestinations;
+		this.fareRef = fareRef;
+		this.penaltiesInfoRef = penaltiesInfoRef;
+		this.fulfillmentDetailsRef = fulfillmentDetailsRef;
 	}
 
 	public PricedItinerary() {

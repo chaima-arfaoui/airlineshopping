@@ -14,15 +14,15 @@ import org.springframework.web.client.RestTemplate;
 import com.worldsoft.entitiesRequest.SessionRequest;
 import com.worldsoft.entitiesResponse.SessionResponse;
 import com.worldsoft.ptrentitiesRequest.Createptrequest;
-import com.worldsoft.ptrentitiesRequest.MarkasheadRequest;
+import com.worldsoft.ptrentitiesRequest.MarkasreadRequest;
 import com.worldsoft.ptrentitiesResponse.Createptresponse;
-import com.worldsoft.ptrentitiesResponse.MarkasheadResponse;
+import com.worldsoft.ptrentitiesResponse.MarkasreadResponse;
 
 @Service
-public class MarkasheadService {
+public class MarkasreadService {
 	@Autowired
 	private SessionService sessionService;
-	public MarkasheadResponse addpt (MarkasheadRequest  markasheadRequest) {
+	public MarkasreadResponse addmark (MarkasreadRequest  markasreadRequest) {
 		try {
 			String userName = "WSGXML";
 			String accountNumber = "MCN000018";
@@ -37,11 +37,11 @@ public class MarkasheadService {
 			headers.set("Authorization", "Bearer " + sessionId);
 
 		RestTemplate restTemplate = new RestTemplate();
-		HttpEntity<MarkasheadRequest> entity = new HttpEntity<>(markasheadRequest, headers);
-		URI url = new URI("https://restapidemo.myfarebox.com/api/PostTicketingRequest");
-		ResponseEntity<MarkasheadResponse> markasheadResponse = restTemplate.exchange(url, HttpMethod.POST, entity,
-				MarkasheadResponse.class);
-		return markasheadResponse.getBody() ;
+		HttpEntity<MarkasreadRequest> entity = new HttpEntity<>(markasreadRequest, headers);
+		URI url = new URI("https://restapidemo.myfarebox.com/api/MarkAsRead");
+		ResponseEntity<MarkasreadResponse> markasreadResponse = restTemplate.exchange(url, HttpMethod.POST, entity,
+				MarkasreadResponse.class);
+		return markasreadResponse.getBody() ;
 
 		}catch (Exception e) {
 			   return null;

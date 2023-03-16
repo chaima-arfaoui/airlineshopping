@@ -2,7 +2,7 @@ package com.worldsoft.ptrentitiesResponse;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class MarkasheadResponse {
+public class MarkasreadResponse {
 	@JsonProperty("Data")
 	private DataMarkashead data;
 	@JsonProperty("Success")
@@ -24,13 +24,13 @@ public class MarkasheadResponse {
 		this.success = success;
 	}
 
-	public MarkasheadResponse(DataMarkashead data, boolean success) {
+	public MarkasreadResponse(DataMarkashead data, boolean success) {
 		super();
 		this.data = data;
 		this.success = success;
 	}
 
-	public MarkasheadResponse() {
+	public MarkasreadResponse() {
 		super();
 	}
 

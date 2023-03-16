@@ -1,7 +1,5 @@
 package com.worldsoft.multicityRequest;
 
-import java.util.Date;
-
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class AirTraveler {
@@ -12,7 +10,7 @@ public class AirTraveler {
 	@JsonProperty("PassengerName")
 	private PassengerName passengerName;
 	@JsonProperty("DateOfBirth")
-	private Date dateOfBirth;
+	private String dateOfBirth;
 	@JsonProperty("Passport")
 	private Passport passport;
 	@JsonProperty("PassengerNationality")
@@ -42,11 +40,11 @@ public class AirTraveler {
 		this.passengerName = passengerName;
 	}
 
-	public Date getDateOfBirth() {
+	public String getDateOfBirth() {
 		return dateOfBirth;
 	}
 
-	public void setDateOfBirth(Date dateOfBirth) {
+	public void setDateOfBirth(String dateOfBirth) {
 		this.dateOfBirth = dateOfBirth;
 	}
 
@@ -66,7 +64,7 @@ public class AirTraveler {
 		this.passengerNationality = passengerNationality;
 	}
 
-	public AirTraveler(String passengerType, String gender, PassengerName passengerName, Date dateOfBirth,
+	public AirTraveler(String passengerType, String gender, PassengerName passengerName, String dateOfBirth,
 			Passport passport, String passengerNationality) {
 		super();
 		this.passengerType = passengerType;

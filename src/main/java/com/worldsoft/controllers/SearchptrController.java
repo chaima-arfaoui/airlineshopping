@@ -1,5 +1,6 @@
 package com.worldsoft.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,12 +15,13 @@ import com.worldsoft.ptrentitiesRequest.Searchptrequest;
 import com.worldsoft.ptrentitiesResponse.Searchptresponse;
 
 @CrossOrigin("*")
-@RequestMapping("/api/search")
+@RequestMapping("/api/ptr")
 @RestController
 public class SearchptrController {
+	@Autowired
 	private SearchptrService searchptrService;
 
-	@PostMapping("/searchptr")
+	@PostMapping("/search")
 	public Searchptresponse ajouterptr(@RequestBody Searchptrequest searchptrequest) {
 		return searchptrService.searchptr(searchptrequest);
 

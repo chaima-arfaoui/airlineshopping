@@ -14,16 +14,17 @@ import org.springframework.web.client.RestTemplate;
 import com.worldsoft.Services.SessionService;
 import com.worldsoft.entitiesRequest.SessionRequest;
 import com.worldsoft.entitiesResponse.SessionResponse;
-import com.worldsoft.ptrentitiesRequest.Searchptrequest;
-import com.worldsoft.ptrentitiesRequest.VoidPostRequest;
-import com.worldsoft.ptrentitiesResponse.Searchptresponse;
-import com.worldsoft.ptrentitiesResponse.VoidPostResponse;
+import com.worldsoft.ptrentitiesRequest.SearchRefundQuoteRequest;
+import com.worldsoft.ptrentitiesRequest.SearchRefundRequest;
+import com.worldsoft.ptrentitiesResponse.SearchRefundQuoteResponse;
+import com.worldsoft.ptrentitiesResponse.SearchRefundResponse;
+
 @Service
-public class SearchvoidService {
+public class SearchRefundService {
 	@Autowired
 	private SessionService sessionService;
 
-	public Searchptresponse searchvoid(Searchptrequest searchptrequest) {
+	public SearchRefundResponse getdetaails(SearchRefundRequest searchRefundRequest) {
 		try {
 			String userName = "WSGXML";
 			String accountNumber = "MCN000018";
@@ -37,12 +38,12 @@ public class SearchvoidService {
 
 			headers.set("Authorization", "Bearer " + sessionId);
 			RestTemplate restTemplate = new RestTemplate();
-			HttpEntity<Searchptrequest> entity = new HttpEntity<>(searchptrequest, headers);
+			HttpEntity<SearchRefundRequest> entity = new HttpEntity<>(searchRefundRequest, headers);
 			URI url = new URI("https://restapidemo.myfarebox.com/api/Search/PostTicketingRequest");
-			ResponseEntity<Searchptresponse> searchptresponse = restTemplate.exchange(url, HttpMethod.POST, entity,
-					Searchptresponse.class);
+			ResponseEntity<SearchRefundResponse> searchRefundResponse = restTemplate.exchange(url, HttpMethod.POST, entity,
+					SearchRefundResponse.class);
 
-			return searchptresponse.getBody();
+			return searchRefundResponse.getBody();
 		} catch (Exception e) {
 			return null;
 		}

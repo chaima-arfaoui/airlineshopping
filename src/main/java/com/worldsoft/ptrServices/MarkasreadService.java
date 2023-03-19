@@ -1,4 +1,4 @@
-package com.worldsoft.Services;
+package com.worldsoft.ptrServices;
 
 import java.net.URI;
 
@@ -11,6 +11,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import com.worldsoft.Services.SessionService;
 import com.worldsoft.entitiesRequest.SessionRequest;
 import com.worldsoft.entitiesResponse.SessionResponse;
 import com.worldsoft.ptrentitiesRequest.VoidPostRequest;

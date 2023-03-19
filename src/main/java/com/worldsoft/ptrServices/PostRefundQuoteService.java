@@ -14,16 +14,17 @@ import org.springframework.web.client.RestTemplate;
 import com.worldsoft.Services.SessionService;
 import com.worldsoft.entitiesRequest.SessionRequest;
 import com.worldsoft.entitiesResponse.SessionResponse;
-import com.worldsoft.ptrentitiesRequest.Searchptrequest;
-import com.worldsoft.ptrentitiesRequest.VoidPostRequest;
-import com.worldsoft.ptrentitiesResponse.Searchptresponse;
-import com.worldsoft.ptrentitiesResponse.VoidPostResponse;
+import com.worldsoft.ptrentitiesRequest.AcceptReissueQuoteRequest;
+import com.worldsoft.ptrentitiesRequest.PostRefundQuoteRequest;
+import com.worldsoft.ptrentitiesResponse.AcceptReissueQuoteResponse;
+import com.worldsoft.ptrentitiesResponse.PostRefundQuoteResponse;
+
 @Service
-public class SearchvoidService {
+public class PostRefundQuoteService {
 	@Autowired
 	private SessionService sessionService;
 
-	public Searchptresponse searchvoid(Searchptrequest searchptrequest) {
+	public PostRefundQuoteResponse getdetaails(PostRefundQuoteRequest postRefundQuoteRequest) {
 		try {
 			String userName = "WSGXML";
 			String accountNumber = "MCN000018";
@@ -37,12 +38,12 @@ public class SearchvoidService {
 
 			headers.set("Authorization", "Bearer " + sessionId);
 			RestTemplate restTemplate = new RestTemplate();
-			HttpEntity<Searchptrequest> entity = new HttpEntity<>(searchptrequest, headers);
-			URI url = new URI("https://restapidemo.myfarebox.com/api/Search/PostTicketingRequest");
-			ResponseEntity<Searchptresponse> searchptresponse = restTemplate.exchange(url, HttpMethod.POST, entity,
-					Searchptresponse.class);
+			HttpEntity<PostRefundQuoteRequest> entity = new HttpEntity<>(postRefundQuoteRequest, headers);
+			URI url = new URI("https://restapidemo.myfarebox.com/api/PostTicketingRequest");
+			ResponseEntity<PostRefundQuoteResponse> postRefundQuoteResponse = restTemplate.exchange(url, HttpMethod.POST, entity,
+					PostRefundQuoteResponse.class);
 
-			return searchptresponse.getBody();
+			return postRefundQuoteResponse.getBody();
 		} catch (Exception e) {
 			return null;
 		}

@@ -2,8 +2,8 @@ package com.worldsoft.ptrentitiesRequest;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-public class ReissueconfirmationRequest {
-	public String ptrType;
+public class SearchRefundQuoteRequest {
+	private String ptrType;
 	@JsonProperty("MFRef")
 	private String mFRef;
 	@JsonProperty("PTRId")
@@ -43,7 +43,7 @@ public class ReissueconfirmationRequest {
 		this.page = page;
 	}
 
-	public ReissueconfirmationRequest(String ptrType, String mFRef, int pTRId, int page) {
+	public SearchRefundQuoteRequest(String ptrType, String mFRef, int pTRId, int page) {
 		super();
 		this.ptrType = ptrType;
 		this.mFRef = mFRef;
@@ -51,7 +51,7 @@ public class ReissueconfirmationRequest {
 		this.page = page;
 	}
 
-	public ReissueconfirmationRequest() {
+	public SearchRefundQuoteRequest() {
 		super();
 	}
 

@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.worldsoft.Services.CreateptrService;
-import com.worldsoft.Services.MarkasreadService;
+import com.worldsoft.ptrServices.MarkasreadService;
 import com.worldsoft.ptrentitiesRequest.VoidPostRequest;
 import com.worldsoft.ptrentitiesRequest.MarkasreadRequest;
 import com.worldsoft.ptrentitiesResponse.Createptresponse;

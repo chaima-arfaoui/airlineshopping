@@ -23,7 +23,7 @@ public class VoidQuoteService {
 	@Autowired
 	private SessionService sessionService;
 
-	public VoidQuoteResponse getdetaails(VoidQuoteRequest voidQuoteRequest) {
+	public VoidQuoteResponse getvoidquote(VoidQuoteRequest voidQuoteRequest) {
 		try {
 			String userName = "WSGXML";
 			String accountNumber = "MCN000018";

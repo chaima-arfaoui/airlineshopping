@@ -9,21 +9,25 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
 import com.worldsoft.Services.SessionService;
 import com.worldsoft.entitiesRequest.SessionRequest;
 import com.worldsoft.entitiesResponse.SessionResponse;
-import com.worldsoft.ptrentitiesRequest.Searchptrequest;
+import com.worldsoft.ptrentitiesRequest.AcceptReissueQuoteRequest;
 import com.worldsoft.ptrentitiesRequest.VoidPostRequest;
-import com.worldsoft.ptrentitiesResponse.Searchptresponse;
+import com.worldsoft.ptrentitiesResponse.AcceptReissueQuoteResponse;
 import com.worldsoft.ptrentitiesResponse.VoidPostResponse;
+
 @Service
-public class SearchvoidService {
+public class AcceptService {
 	@Autowired
 	private SessionService sessionService;
 
-	public Searchptresponse searchvoid(Searchptrequest searchptrequest) {
+	public AcceptReissueQuoteResponse getdetaails(AcceptReissueQuoteRequest acceptReissueQuoteRequest) {
 		try {
 			String userName = "WSGXML";
 			String accountNumber = "MCN000018";
@@ -37,15 +41,16 @@ public class SearchvoidService {
 
 			headers.set("Authorization", "Bearer " + sessionId);
 			RestTemplate restTemplate = new RestTemplate();
-			HttpEntity<Searchptrequest> entity = new HttpEntity<>(searchptrequest, headers);
-			URI url = new URI("https://restapidemo.myfarebox.com/api/Search/PostTicketingRequest");
-			ResponseEntity<Searchptresponse> searchptresponse = restTemplate.exchange(url, HttpMethod.POST, entity,
-					Searchptresponse.class);
+			HttpEntity<AcceptReissueQuoteRequest> entity = new HttpEntity<>(acceptReissueQuoteRequest, headers);
+			URI url = new URI("https://restapidemo.myfarebox.com/api/PostTicketingRequest");
+			ResponseEntity<AcceptReissueQuoteResponse> acceptReissueQuoteResponse = restTemplate.exchange(url, HttpMethod.POST, entity,
+					AcceptReissueQuoteResponse.class);
 
-			return searchptresponse.getBody();
+			return acceptReissueQuoteResponse.getBody();
 		} catch (Exception e) {
 			return null;
 		}
 	}
+	
 
 }
